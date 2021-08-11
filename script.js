@@ -16,6 +16,13 @@ function login(){
         console.log(data['access_token'])
         mystorage.setItem('jwt-token', data['access_token'])
     });
+    if (access_token !== ""){
+        window.location="products.html"
+        }
+    else{
+        alert("Erro not valid login in!")
+     }
+        
 }
 
 function submitForm(event) {
@@ -24,3 +31,23 @@ function submitForm(event) {
 }
 
 form.addEventListener("submit", submitForm);
+
+// document.querySelector('#login')
+//  .addEventListener('click', () =>{
+//      if (access_token !== ""){
+//      window.location.href ="../products.html"
+//      }
+//      else{
+//          alert("Erro not valid login in!")
+//      }
+//  })
+
+// function redirect(){
+//     if (access_token !== ""){
+//              window.location="products.html"
+//              }
+//              else{
+//                  alert("Erro not valid login in!")
+//              }
+
+// }
