@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.navbar{
+    background-color:aquamarine;
+    padding: 10px 5%;
+    
+}
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link{
+    margin-right: 30px;
+}
+
+.profile{
+    display: flex;
+   justify-content: space-between;
+}
+.product_image{
+    object-fit: cover;
+    width: 12vw;
+    height: 25vh;
+}
