@@ -61,7 +61,7 @@ input{
     margin-bottom: 35px;
 }
 
-.login{
+#login{
     align-items: center;
     justify-content: center;
     margin-top: 25px;
@@ -69,7 +69,7 @@ input{
     margin-bottom: 25px;
 }
 
-.login a{
+#login a{
     text-decoration: none;
     padding: 10px 20%;
     background-color:dodgerblue;

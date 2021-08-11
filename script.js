@@ -1,54 +1,26 @@
-// const formEl = document.querySelector('form')
+let access_token = window.localStorage.getItem("jwt-token")
 
-// formEl.addEventListener('submit', (e) =>{
-//     e.preventDefault();
-//     let firstName = document.getElementById('first_name').value
-//     let lastName = document.getElementById('last_name').value
-//     let username = document.getElementById('username').value
-//     let password = document.getElementById('password').value
-
-//     fetch('https://tashwill-pos.herokuapp.com/user-registration',{
-//         method:"POST",
-//         body:JSON.stringify({
-//             first_name:firstName,
-//             last_name:lastName,
-//             username:username,
-//             password:password
-//         }),
-//         headers:{
-//             "Content-Type": "application/json; charset=UTF-8",
-//             "Access-Control-Allow-Origin": "*",
-//             'mode':'no-cors'
-//         }
-//     })
-//     .then(function(response){
-//         return response.json
-
-//     })
-//     .then(function(data){
-//         console.log(data)
-//     })
-// })
-
-const url = 'https://tashwill-pos.herokuapp.com/user-registration'
-const formEl = document.querySelector('form');
-formEl.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(formEl)
-    // const jsonObject = {...formDataSerialized, sendToSelf: formDataSerialized.sendToSelf ? true : false,
-    try{
-        const response = await fetch(url, {
-            method: "POST",
-            body: JSON.stringify(),
-            headers:{
-                "Content-Type": "multipart/form-data; boundary=<calculated when request is sent>"
-            }
-        })
-        const json = await response.json()
-        console.log(json)
-    } catch (e){
-        console.error(e)
-        alert('there was an error')
+function login(){
+    fetch('https://tashwill-pos.herokuapp.com/auth', {
+    method: "POST",
+    body: JSON.stringify({
+        'username': document.getElementById("username").value,
+        'password': document.getElementById("password").value,
+    }),
+    headers: {
+        'Content-type': 'application/json',
     }
-})
+    }).then(response => response.json()).then(data => {
+        console.log(data)
+        mystorage = window.localStorage
+        console.log(data['access_token'])
+        mystorage.setItem('jwt-token', data['access_token'])
+    });
+}
 
+function submitForm(event) {
+    event.preventDefault();
+    login();
+}
+
+form.addEventListener("submit", submitForm);
