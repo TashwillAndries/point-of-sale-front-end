@@ -12,7 +12,24 @@
             <ul class="nav-links">
                 <div class="edit-products">
               <li class="nav-link">
-                <a class="first-nav" href="./html/about.html">Add Product</a>
+                <button class="Add-product">Add Product</button>
+                <div class="model-bg">
+                  <div class="model">
+                    <h2 class="model-header">Enter information of Product</h2>
+                    <form action="https://tashwill-pos.herokuapp.com/create-product/" class="form-model">
+                      <input type="text" id="item-name" name="item_name" placeholder="product-name">
+                      <input type="text" id="description" name="description" placeholder="description">
+                      <input type="text" id="quantity" name="quantity" placeholder="quantity">
+                      <input type="text" id="price" name="price" placeholder="price">
+                      <input type="text" id="type" name="type" placeholder="type">
+                      <input type="text" id="picture" name="picture" placeholder="picture">
+                      <input type="text" id="total" name="total" placeholder="total">
+                      <button type="submit" onclick="create()">Create Product</button>
+            
+                    </form>
+                    <span class="model-close">X</span>
+                  </div>
+                </div>
               </li>
             </div>
             <div class="profile"><li class="nav-link">
@@ -22,11 +39,11 @@
                 <a href="./html/Testimonial.html">Profile</a>
               </li>
               <li class="nav-link">
-                <a href="./html/Contact.html">Logout</a>
+                <a href="./index.html">Logout</a>
               </li>
             </div></ul>
               
-    </nav>
+    </nav> 
     <div id="product-container"></div>
 
     <script src="../product.js"></script>

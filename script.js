@@ -32,22 +32,3 @@ function submitForm(event) {
 
 form.addEventListener("submit", submitForm);
 
-// document.querySelector('#login')
-//  .addEventListener('click', () =>{
-//      if (access_token !== ""){
-//      window.location.href ="../products.html"
-//      }
-//      else{
-//          alert("Erro not valid login in!")
-//      }
-//  })
-
-// function redirect(){
-//     if (access_token !== ""){
-//              window.location="products.html"
-//              }
-//              else{
-//                  alert("Erro not valid login in!")
-//              }
-
-// }

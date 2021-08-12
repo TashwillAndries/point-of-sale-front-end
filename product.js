@@ -17,3 +17,19 @@ productContainer.innerHTML += `<div class = 'product'>
                                  </div>`
 })
 })
+
+// function openModal() {
+//     document.getElementById("modal").classList.toggle("modal-active");
+//   }
+
+let modalBtn = document.querySelector(".Add-product")
+let modelBg = document.querySelector(".model-bg")
+let modalClose = document.querySelector(".model-close")
+
+modalBtn.addEventListener('click', function(){
+    modelBg.classList.add("bg-active")
+})
+
+modalClose.addEventListener('click', function(){
+    modelBg.classList.remove("bg-active")
+})
