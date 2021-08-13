@@ -13,23 +13,27 @@
                 <div class="edit-products">
               <li class="nav-link">
                 <button class="Add-product">Add Product</button>
+                <form method="POST">
+                <input type="text" id="search-bar" placeholder="search product number">
+                <button type="submit" onclick='event.preventDefault(), remove()'>Delete Product</button> 
+              </form>
                 <div class="model-bg">
                   <div class="model">
                     <h2 class="model-header">Enter information of Product</h2>
-                    <form action="https://tashwill-pos.herokuapp.com/create-product/" class="form-model">
-                      <input type="text" id="item-name" name="item_name" placeholder="product-name">
+                    <form method="POST" class="form-model" id="form">
+                      <input type="text" id="item_name" name="item_name" placeholder="product name">
                       <input type="text" id="description" name="description" placeholder="description">
                       <input type="text" id="quantity" name="quantity" placeholder="quantity">
                       <input type="text" id="price" name="price" placeholder="price">
                       <input type="text" id="type" name="type" placeholder="type">
-                      <input type="text" id="picture" name="picture" placeholder="picture">
-                      <input type="text" id="total" name="total" placeholder="total">
-                      <button type="submit" onclick="create()">Create Product</button>
+                      <input type="file" id="picture" name="picture" placeholder="picture" onchange="convert()">
+
+                      <button type="submit" onclick="event.preventDefault(), create()">Create Product</button>
             
-                    </form>
+                    <div>
                     <span class="model-close">X</span>
                   </div>
-                </div>
+                </form>
               </li>
             </div>
             <div class="profile"><li class="nav-link">
@@ -45,6 +49,7 @@
               
     </nav> 
     <div id="product-container"></div>
+    <!-- <img src="" alt="" id="product_image"> -->
 
     <script src="../product.js"></script>
 </body>

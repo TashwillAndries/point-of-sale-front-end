@@ -12,17 +12,17 @@ function login(){
     }
     }).then(response => response.json()).then(data => {
         console.log(data)
+        if (data['description'] == 'Invalid credentials'){
+        alert("Error not valid login in!")
+        }
+    else{
         mystorage = window.localStorage
         console.log(data['access_token'])
         mystorage.setItem('jwt-token', data['access_token'])
+        window.location.href = './products.html'
+    }    
     });
-    if (access_token !== ""){
-        window.location="products.html"
-        }
-    else{
-        alert("Erro not valid login in!")
-     }
-        
+    
 }
 
 function submitForm(event) {
@@ -31,4 +31,9 @@ function submitForm(event) {
 }
 
 form.addEventListener("submit", submitForm);
+
+
+// delete product
+
+
 
