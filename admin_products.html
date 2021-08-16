@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../templates/products.css">
-    <title>Products</title>
-</head>
-<body>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <div class="edit-products">
-              <li class="nav-link">
-                <button class="Add-product">Add Product</button>
-                <form method="POST">
-                <input type="text" id="search-bar" placeholder="search product number">
-                <button type="submit" onclick='event.preventDefault(), remove()'>Delete Product</button> 
-              </form>
-                <div class="model-bg">
-                  <div class="model">
+<html>
+    <head>
+        <title>Admin Page</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="./templates/store.css" />
+        <link rel="stylesheet" href="./templates/admin.css">
+
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="./login.html">HOME</a></li>
+                    <li><button class="product-modal">ADD Product</button></li>
+                    <li><button class="modal-button">Profile</button>
+                    </li>
+                </ul>
+            </nav>
+            <h1 class="band-name band-name-large">Sports Wear</h1>
+            <div class="modal-bg">
+                <div class="modal">
                     <h2 class="model-header">Enter information of Product</h2>
                     <form method="POST" class="form-model" id="form">
                       <input type="text" id="item_name" name="item_name" placeholder="product name">
@@ -28,29 +29,18 @@
                       <input type="text" id="type" name="type" placeholder="type">
                       <input type="file" id="picture" name="picture" placeholder="picture" onchange="convert()">
 
-                      <button type="submit" onclick="event.preventDefault(), create()">Create Product</button>
-            
-                    <div>
-                    <span class="model-close">X</span>
-                  </div>
-                </form>
-              </li>
+                      
+                    </form>
+                    <span class="modal-close">X</span>
+                    <button type="submit" onclick="event.preventDefault(), create()">Create Product</button>
+                </div>
             </div>
-            <div class="profile"><li class="nav-link">
-                <a href="./html/Projects.html">Cart</a>
-              </li>
-              <li class="nav-link">
-                <a href="./html/Testimonial.html">Profile</a>
-              </li>
-              <li class="nav-link">
-                <a href="./index.html">Logout</a>
-              </li>
-            </div></ul>
-              
-    </nav> 
-    <div id="product-container"></div>
-    <!-- <img src="" alt="" id="product_image"> -->
-
-    <script src="./scripts/product.js"></script>
-</body>
+        </header>
+        <section class="container content-section">
+            <h2 class="section-header">MERCH</h2>
+            <div class="shop-items">
+            </div>
+        </section>
+        <script src="./scripts/admin.js"></script>
+    </body>
 </html>

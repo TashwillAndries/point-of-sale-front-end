@@ -1,4 +1,5 @@
 const mystorage = window.localStorage
+const idStorage = window.localStorage
 
 function login(){
     fetch('https://tashwill-system.herokuapp.com/auth', {
@@ -18,6 +19,7 @@ function login(){
     else{
         console.log(data['access_token'])
         mystorage.setItem('username', document.getElementById("username").value)
+        idStorage.setItem('user_id', data['data'][0][0])
         window.location.href = 'store.html'
     }    
     });
@@ -36,7 +38,7 @@ function admin(){
     }
     }).then(response => response.json()).then(data => {
         console.log(data)
-        if (data['description'] == 'Invalid credentials'){
+        if (data['message'] == 'failed'){
         alert("Error not valid login in!")
         }
     else{

@@ -2,6 +2,7 @@
 // let cart = []
 
 const mystorage = window.localStorage
+const idStorage = window.localStorage
 
 console.log(mystorage.getItem('username'))
 
@@ -16,6 +17,16 @@ modalBtn.addEventListener('click', function(){
 modalClose.addEventListener('click', function(){
     modalBg.classList.remove('bg-active')
 })
+
+
+function Deleteuser(id){
+    fetch('https://tashwill-system.herokuapp.com/get-products/')
+.then(res => res.json())
+.then(data =>{
+    console.log(data)
+})
+
+}
 
 fetch('https://tashwill-system.herokuapp.com/get-products/')
 .then(res => res.json())
@@ -48,11 +59,12 @@ fetch(`https://tashwill-system.herokuapp.com/show-user/${mystorage.getItem('user
 .then(res => res.json())
             .then(data => {
                 console.log(data)
-                document.getElementsByClassName('first-name').innerHTML = `${data[1]}`
-                document.getElementsByClassName('surname').innerHTML = `${data[2]}`
-                document.getElementsByClassName('address').innerHTML = `${data[3]}`
-                document.getElementsByClassName('email').innerHTML = `${data[4]}`
-                document.getElementsByClassName('username').innerHTML = `${data[5]}`
+                console.log(data['data'][1])
+                document.querySelector('.first-name').innerHTML = `First Name: ${data['data'][1]}`
+                document.querySelector('.surname').innerHTML = `Surname: ${data['data'][2]}`
+                document.querySelector('.address').innerHTML = `Address: ${data['data'][3]}`
+                document.querySelector('.email').innerHTML = `Email: ${data['data'][4]}`
+                document.querySelector('.username').innerHTML = `Username: ${data['data'][5]}`
         })
 
 

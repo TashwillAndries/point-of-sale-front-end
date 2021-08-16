@@ -14,9 +14,10 @@
         <div class="headers"><h3>Sign-up</h3>
             <p>Enter Details Below</p>
         </div>
-       <form class="details" action="https://tashwill-system.herokuapp.com/register-admin/" method="POST">
+       <form class="details">
             <input type="text" id="username" name="admin_username" placeholder="username">
             <input type="text" id="password" name="admin_password" placeholder="password">
-            <input type="submit" class="submit" value = 'submit' >
+            <button type="submit" onclick="event.preventDefault(), admin()" class="btn">submit</button>
+        <script src="./scripts/admin_signup.js"></script>
 </body>
 </html>

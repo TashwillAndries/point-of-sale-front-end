@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../templates/products.css">
+    <title>Products</title>
+</head>
+<body>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <div class="edit-products">
+              <li class="nav-link">
+                <button class="Add-product">Add Product</button>
+                <form method="POST">
+                <input type="text" id="search-bar" placeholder="search product number">
+                <button type="submit" onclick='event.preventDefault(), remove()'>Delete Product</button> 
+              </form>
+                <div class="model-bg">
+                  <div class="model">
+                    <h2 class="model-header">Enter information of Product</h2>
+                    <form method="POST" class="form-model" id="form">
+                      <input type="text" id="item_name" name="item_name" placeholder="product name">
+                      <input type="text" id="description" name="description" placeholder="description">
+                      <input type="text" id="quantity" name="quantity" placeholder="quantity">
+                      <input type="text" id="price" name="price" placeholder="price">
+                      <input type="text" id="type" name="type" placeholder="type">
+                      <input type="file" id="picture" name="picture" placeholder="picture" onchange="convert()">
+
+                      <button type="submit" onclick="event.preventDefault(), create()">Create Product</button>
+                    </form>
+                    </div>
+                    </div>
+                    <div>
+                    <span class="model-close">X</span>
+                  </div>
+                </form>
+              </li>
+            </div>
+            <div class="profile"><li class="nav-link">
+                <a href="./html/Projects.html">Cart</a>
+              </li>
+              <li class="nav-link">
+                <a href="./html/Testimonial.html">Profile</a>
+              </li>
+              <li class="nav-link">
+                <a href="./index.html">Logout</a>
+              </li>
+            </div></ul>
+              
+    </nav> 
+    <div id="product-container"></div>
+    <!-- <img src="" alt="" id="product_image"> -->
+
+    <script src="./scripts/product.js"></script>
+</body>
+</html>
