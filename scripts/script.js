@@ -1,4 +1,4 @@
-let access_token = window.localStorage.getItem("jwt-token")
+const mystorage = window.localStorage
 
 function login(){
     fetch('https://tashwill-system.herokuapp.com/auth', {
@@ -16,10 +16,9 @@ function login(){
         alert("Error not valid login in!")
         }
     else{
-        mystorage = window.localStorage
         console.log(data['access_token'])
-        mystorage.setItem('jwt-token', data['access_token'])
-        window.location.href = 'products.html'
+        mystorage.setItem('username', document.getElementById("username").value)
+        window.location.href = 'store.html'
     }    
     });
     
@@ -29,8 +28,8 @@ function admin(){
     fetch('https://tashwill-system.herokuapp.com/admin-login/', {
     method: "POST",
     body: JSON.stringify({
-        'admin_username': document.getElementById("username").value,
-        'admin_password': document.getElementById("password").value,
+        'admin_username': document.getElementById("ausername").value,
+        'admin_password': document.getElementById("apassword").value,
     }),
     headers: {
         'Content-type': 'application/json',
