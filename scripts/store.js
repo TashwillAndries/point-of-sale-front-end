@@ -19,14 +19,19 @@ modalClose.addEventListener('click', function(){
 })
 
 
-function Deleteuser(id){
-    fetch('https://tashwill-system.herokuapp.com/get-products/')
-.then(res => res.json())
-.then(data =>{
-    console.log(data)
-})
-
-}
+function Deleteuser(){
+    fetch(`https://tashwill-system.herokuapp.com/show-user/${idStorage.getItem('username')}`,{
+        method: "GET",
+        body: JSON.stringify(),
+        headers: {
+            'Content-type': 'application/json',
+        }
+    })
+    .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+            })
+        }
 
 fetch('https://tashwill-system.herokuapp.com/get-products/')
 .then(res => res.json())

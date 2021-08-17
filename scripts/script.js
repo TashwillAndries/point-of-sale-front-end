@@ -19,7 +19,7 @@ function login(){
     else{
         console.log(data['access_token'])
         mystorage.setItem('username', document.getElementById("username").value)
-        idStorage.setItem('user_id', data['data'][0][0])
+        idStorage.setItem('user_id', data[0])
         window.location.href = 'store.html'
     }    
     });
